@@ -11,6 +11,7 @@ import org.ejemplo.los.objetos.inmutables.son.mas.seguros.EmpleadoInmutable;
 import org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Billete;
 import org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Moneda;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -94,6 +95,28 @@ public class Main {
         //	at org.ejemplo.comprueba.la.validez.de.los.parametros.en.tus.metodos.Fecha.<init>(Fecha.java:16)
         //	at org.ejemplo.Main.main(Main.java:91)
 
-        
+
+        // ***** Evita float y double cuando necesites resultados exactos *****
+        // si se necesitan calculos militares, aeronauticos o aplicaciones
+        // que trabajan con dinero es mejor evitarlos y sustituirlo
+        // por BigDecimal
+        System.out.println("Sin BigDecimal 3 * 0.10 = "+3 * 0.10);
+        // 0.30000000000000004 puede parecer insignificante,
+        // pero al irse acumulando puede generar problemas graves
+        BigDecimal bdString = new BigDecimal("0.1");
+        System.out.println("Con BigDecimal 3 * 0.10 = "+ bdString.multiply(new BigDecimal(3)));
+
+        BigDecimal bdDouble = new BigDecimal(0.1);
+        BigDecimal otroBigDecimal = new BigDecimal("0.10");
+        System.out.println("Escala bdString:"+bdString.scale());
+        System.out.println("Escala otroBigDecimal:"+otroBigDecimal.scale());
+        System.out.println("¿Son iguales? "+bdString.equals(otroBigDecimal));
+        // Al crear el BigDecimal a partir de un Double se tiene el mismo problema de imprecision
+        System.out.println("Con bdDouble 3 * 0.10 = "+ bdDouble.multiply(new BigDecimal(3)));
+       // hay que convertir
+        double x = 0.10;
+        System.out.println("(Con conversion) 3 * 0.10 = "+ new BigDecimal(String.valueOf(x)).multiply(BigDecimal.valueOf(3)));
+        // BigDecimal es más lento y ocupa más memoria, pero es más preciso
+
     }
 }
