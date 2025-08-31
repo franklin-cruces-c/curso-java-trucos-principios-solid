@@ -1,5 +1,7 @@
 package org.ejemplo;
 
+import org.ejemplo.comprueba.la.validez.de.los.parametros.en.tus.metodos.DiaDeLaSemana;
+import org.ejemplo.comprueba.la.validez.de.los.parametros.en.tus.metodos.Fecha;
 import org.ejemplo.evita.constructores.con.muchos.parametros.Rectangulo;
 import org.ejemplo.evita.constructores.con.muchos.parametros.RectanguloBean;
 import org.ejemplo.evita.constructores.con.muchos.parametros.RectanguloBuilder;
@@ -57,8 +59,8 @@ public class Main {
         // Esto está permitido por compatibilidad con versiones anteriores
         ArrayList monedas = new ArrayList();
         // Y permite que podamos agregar cualquier tipo de objeto a la coleccion
-        monedas.add(new Moneda(1,"euro"));
-        monedas.add(new Billete(5,"euro"));
+        monedas.add(new Moneda(1, "euro"));
+        monedas.add(new Billete(5, "euro"));
         // Esto genera excepción porque Billete no puede ser casteado a Moneda
         // Exception in thread "main" java.lang.ClassCastException: class org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Billete cannot be cast to class org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Moneda (org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Billete and org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Moneda are in unnamed module of loader 'app')
         //	at org.ejemplo.Main.main(Main.java:64)
@@ -71,14 +73,27 @@ public class Main {
         // La forma correcta
         ArrayList<Moneda> monedasOk = new ArrayList<>();
         // Y permite que podamos agregar cualquier tipo de objeto a la coleccion
-        monedasOk.add(new Moneda(1,"euro"));
+        monedasOk.add(new Moneda(1, "euro"));
         //monedasOk.add(new Billete(5,"euro"));
-        monedasOk.add(new Moneda(2,"euro"));
-        for(int i= 0;i < monedasOk.size();i++){
+        monedasOk.add(new Moneda(2, "euro"));
+        for (int i = 0; i < monedasOk.size(); i++) {
             Moneda miMoneda = monedasOk.get(i);
             System.out.println("Moneda: " + miMoneda.toString());
         }
         // ***** Comprueba la validez de los parametros en tus métodos *****
+        Fecha fecha = new Fecha(5, 10, 1990, DiaDeLaSemana.DOMINGO);
+        // este da excepcion por dia incorrecto
+        //Exception in thread "main" java.lang.IllegalArgumentException: Día:88 El día debe estar entre 1 y 31
+        //	at org.ejemplo.comprueba.la.validez.de.los.parametros.en.tus.metodos.Fecha.setDia(Fecha.java:26)
+        //	at org.ejemplo.Main.main(Main.java:86)
+        //fecha.setDia(88);
+        // Excepcion por dia de la semana null
+        //Fecha fecha2 = new Fecha(5,10,1990, null);
+        //  Exception in thread "main" java.lang.NullPointerException: Dia de la semana no puede ser null
+        //	at java.base/java.util.Objects.requireNonNull(Objects.java:246)
+        //	at org.ejemplo.comprueba.la.validez.de.los.parametros.en.tus.metodos.Fecha.<init>(Fecha.java:16)
+        //	at org.ejemplo.Main.main(Main.java:91)
+
         
     }
 }
