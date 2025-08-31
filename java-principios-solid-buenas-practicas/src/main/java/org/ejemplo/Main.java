@@ -6,6 +6,10 @@ import org.ejemplo.evita.constructores.con.muchos.parametros.RectanguloBuilder;
 import org.ejemplo.los.objetos.inmutables.son.mas.seguros.Direccion;
 import org.ejemplo.los.objetos.inmutables.son.mas.seguros.Empleado;
 import org.ejemplo.los.objetos.inmutables.son.mas.seguros.EmpleadoInmutable;
+import org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Billete;
+import org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Moneda;
+
+import java.util.ArrayList;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -26,7 +30,7 @@ public class Main {
         RectanguloBuilder rectanguloBuilder = new RectanguloBuilder.Builder(200, 100)
                 .x(5).y(5).build();
 
-        // ***** Objetos Inmutables
+        // ***** Objetos Inmutables *****
         // A pesar del costo adicional que tienen
         // crearemos clases inmutables para evitar
         // que sean modificados por fuera de la misma clase u objeto
@@ -48,5 +52,33 @@ public class Main {
         System.out.println("(Después de modificar direccion) La direccion del empleado es:" + empleado.getDireccion());
         System.out.println("(Después de modificar direccion) La direccion del empleado Immutable es:" + empleadoInmutable.getDireccion());
 
+
+        // ***** No usar clases genéricas en su forma raw *****
+        // Esto está permitido por compatibilidad con versiones anteriores
+        ArrayList monedas = new ArrayList();
+        // Y permite que podamos agregar cualquier tipo de objeto a la coleccion
+        monedas.add(new Moneda(1,"euro"));
+        monedas.add(new Billete(5,"euro"));
+        // Esto genera excepción porque Billete no puede ser casteado a Moneda
+        // Exception in thread "main" java.lang.ClassCastException: class org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Billete cannot be cast to class org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Moneda (org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Billete and org.ejemplo.no.usar.clases.genericas.en.su.forma.raw.Moneda are in unnamed module of loader 'app')
+        //	at org.ejemplo.Main.main(Main.java:64)
+//        for(int i= 0;i < monedas.size();i++){
+//            Moneda miMoneda = (Moneda) monedas.get(i);
+//            System.out.println("Moneda"+miMoneda.toString());
+//        }
+        // No debemos usar tipos Raw a menos que estemos
+        // trabajando con código antiguo
+        // La forma correcta
+        ArrayList<Moneda> monedasOk = new ArrayList<>();
+        // Y permite que podamos agregar cualquier tipo de objeto a la coleccion
+        monedasOk.add(new Moneda(1,"euro"));
+        //monedasOk.add(new Billete(5,"euro"));
+        monedasOk.add(new Moneda(2,"euro"));
+        for(int i= 0;i < monedasOk.size();i++){
+            Moneda miMoneda = monedasOk.get(i);
+            System.out.println("Moneda: " + miMoneda.toString());
+        }
+        // ***** Comprueba la validez de los parametros en tus métodos *****
+        
     }
 }
