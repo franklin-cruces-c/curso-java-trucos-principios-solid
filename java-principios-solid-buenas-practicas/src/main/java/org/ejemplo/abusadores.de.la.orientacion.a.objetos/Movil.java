@@ -1,3 +1,5 @@
+package org.ejemplo.abusadores.de.la.orientacion.a.objetos;
+
 public class Movil {
 
     public void hacerLlamada(Telefono numero) {

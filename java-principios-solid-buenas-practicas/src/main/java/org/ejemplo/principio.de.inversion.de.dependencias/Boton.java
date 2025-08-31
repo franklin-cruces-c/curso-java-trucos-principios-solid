@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.inversion.de.dependencias;
+
 public class Boton {
 
     private Lampara lampara;
@@ -7,10 +9,10 @@ public class Boton {
     }
 
     public void pulsar() {
-        if (condicion) {
-            lampara.encender();
-        } else {
-            lampara.apagar();
-        }
+//        if (condicion) {
+//            lampara.encender();
+//        } else {
+//            lampara.apagar();
+//        }
     }
 }

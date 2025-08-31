@@ -1,3 +1,5 @@
+package org.ejemplo.no.usar.clases.genericas.en.su.forma.raw;
+
 public class Moneda {
     private int valor;
     private String nombre;

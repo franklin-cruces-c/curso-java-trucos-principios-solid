@@ -1,3 +1,5 @@
+package org.ejemplo.evita.usar.los.wrapper.de.primitivos.cuando.no.es.necesario;
+
 public class UsoDeWrappers {
 
     private static long[] numeros = new long[10_000_000];

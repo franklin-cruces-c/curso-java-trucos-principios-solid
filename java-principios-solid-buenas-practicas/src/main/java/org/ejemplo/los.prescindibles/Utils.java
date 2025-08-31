@@ -1,3 +1,5 @@
+package org.ejemplo.los.prescindibles;
+
 public class Utils {
 
 	public static Coleccion ordenarColeccion(Coleccion coleccion) {

@@ -1,3 +1,5 @@
+package org.ejemplo.bloaters;
+
 public class Bloaters {
 
     public void enviarCarta(Empleado empleado) {

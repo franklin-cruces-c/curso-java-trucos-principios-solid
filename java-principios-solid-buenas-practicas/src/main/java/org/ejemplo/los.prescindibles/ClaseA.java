@@ -1,3 +1,5 @@
+package org.ejemplo.los.prescindibles;
+
 public class ClaseA {
 
     public void metodo1() {

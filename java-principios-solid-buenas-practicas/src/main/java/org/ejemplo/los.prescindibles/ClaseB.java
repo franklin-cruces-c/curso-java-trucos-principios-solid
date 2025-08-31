@@ -1,3 +1,5 @@
+package org.ejemplo.los.prescindibles;
+
 public class ClaseB extends ClaseA {
 
     public void metodo5() {

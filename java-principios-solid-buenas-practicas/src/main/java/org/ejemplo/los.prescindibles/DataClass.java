@@ -1,3 +1,5 @@
+package org.ejemplo.los.prescindibles;
+
 public class DataClass {
     private String variable1;
     private int variable2;

@@ -1,3 +1,5 @@
+package org.ejemplo.obstaculos.para.el.cambio;
+
 import java.util.ArrayList;
 import java.util.List;
 

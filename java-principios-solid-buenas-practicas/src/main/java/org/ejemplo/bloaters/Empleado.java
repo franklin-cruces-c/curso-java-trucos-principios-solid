@@ -1,3 +1,5 @@
+package org.ejemplo.bloaters;
+
 public final class Empleado {
     private final int id;
     private final String nombre;

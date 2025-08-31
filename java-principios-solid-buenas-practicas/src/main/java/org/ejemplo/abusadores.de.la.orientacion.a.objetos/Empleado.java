@@ -1,3 +1,5 @@
+package org.ejemplo.abusadores.de.la.orientacion.a.objetos;
+
 public class Empleado {
 
     private TipoDeEmpleado tipoDeEmpleado;

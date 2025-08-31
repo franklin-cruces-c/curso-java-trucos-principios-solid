@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.responsabilidad.unica;
+
 public interface ClienteConexion {
 
     void abrirConexion();

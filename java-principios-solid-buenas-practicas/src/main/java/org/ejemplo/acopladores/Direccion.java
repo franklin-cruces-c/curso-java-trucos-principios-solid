@@ -1,3 +1,5 @@
+package org.ejemplo.acopladores;
+
 public class Direccion {
     private String calle;
     private int numero;

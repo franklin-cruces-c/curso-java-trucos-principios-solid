@@ -1,3 +1,5 @@
+package org.ejemplo.evitar.los.memory.leaks;
+
 public class Perro {
     String raza;
 

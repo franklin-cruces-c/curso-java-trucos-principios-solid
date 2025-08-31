@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.sustitucion.de.liskov;
+
 public class Rectangulo{
 
     private double x;

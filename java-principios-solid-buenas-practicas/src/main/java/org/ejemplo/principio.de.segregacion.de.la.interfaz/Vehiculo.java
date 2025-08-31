@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.segregacion.de.la.interfaz;
+
 public interface Vehiculo {
     void encenderMotor();
     void pararMotor();

@@ -1,3 +1,5 @@
+package org.ejemplo.acopladores;
+
 public class Tienda {
 
     //.................................................

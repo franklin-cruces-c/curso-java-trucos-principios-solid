@@ -1,3 +1,5 @@
+package org.ejemplo.los.prescindibles;
+
 public class Comentarios {
 
     //Tener cuidado con el parámetro1 porque debe estar en minúsculas

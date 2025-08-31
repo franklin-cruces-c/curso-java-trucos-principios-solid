@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.segregacion.de.la.interfaz;
+
 public class Coche implements Vehiculo {
     @Override
     public void encenderMotor() {

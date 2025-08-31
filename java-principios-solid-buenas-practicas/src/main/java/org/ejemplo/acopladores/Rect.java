@@ -1,3 +1,5 @@
+package org.ejemplo.acopladores;
+
 public class Rect {
     private double alto;
     private double ancho;

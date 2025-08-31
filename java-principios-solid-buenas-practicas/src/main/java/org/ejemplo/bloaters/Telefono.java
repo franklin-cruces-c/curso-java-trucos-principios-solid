@@ -1,3 +1,5 @@
+package org.ejemplo.bloaters;
+
 public class Telefono {
     private final int numero;
 

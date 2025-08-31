@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.responsabilidad.unica;
+
 public class Material {
 
     private Double precioMetroCuadrado;

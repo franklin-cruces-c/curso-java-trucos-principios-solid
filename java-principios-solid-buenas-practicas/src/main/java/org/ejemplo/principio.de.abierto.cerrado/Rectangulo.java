@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.abierto.cerrado;
+
 public class Rectangulo {
 
     private double x;

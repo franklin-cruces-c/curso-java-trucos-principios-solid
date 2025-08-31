@@ -1,3 +1,5 @@
+package org.ejemplo.bloaters;
+
 public class Direccion {
     String calle;
     int numero;

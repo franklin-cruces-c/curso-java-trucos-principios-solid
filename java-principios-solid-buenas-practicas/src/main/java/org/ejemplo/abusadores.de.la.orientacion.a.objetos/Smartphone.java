@@ -1,3 +1,5 @@
+package org.ejemplo.abusadores.de.la.orientacion.a.objetos;
+
 public class Smartphone {
     public void llamar(Telefono numero) {
 

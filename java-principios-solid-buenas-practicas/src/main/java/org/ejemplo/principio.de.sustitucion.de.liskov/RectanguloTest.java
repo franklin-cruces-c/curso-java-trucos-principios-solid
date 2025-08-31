@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.sustitucion.de.liskov;
+
 public class RectanguloTest {
 
     public void testArea(Rectangulo rectangulo) {

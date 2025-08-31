@@ -1,3 +1,5 @@
+package org.ejemplo.comprueba.la.validez.de.los.parametros.en.tus.metodos;
+
 public class Fecha {
     int dia;
     int mes;

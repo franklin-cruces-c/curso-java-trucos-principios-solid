@@ -1,3 +1,5 @@
+package org.ejemplo.principio.de.responsabilidad.unica;
+
 public class Mesa {
 
     private Rectangulo tablero;
