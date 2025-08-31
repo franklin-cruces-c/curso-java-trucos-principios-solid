@@ -1,3 +1,4 @@
+package org.ejemplo.los.objetos.inmutables.son.mas.seguros;
 public class Direccion {
     private String calle;
     private String numero;

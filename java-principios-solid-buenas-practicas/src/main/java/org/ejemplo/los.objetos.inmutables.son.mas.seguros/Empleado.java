@@ -1,3 +1,5 @@
+package org.ejemplo.los.objetos.inmutables.son.mas.seguros;
+
 public class Empleado {
     private int id;
     private String nombre;
