@@ -100,23 +100,44 @@ public class Main {
         // si se necesitan calculos militares, aeronauticos o aplicaciones
         // que trabajan con dinero es mejor evitarlos y sustituirlo
         // por BigDecimal
-        System.out.println("Sin BigDecimal 3 * 0.10 = "+3 * 0.10);
+        System.out.println("Sin BigDecimal 3 * 0.10 = " + 3 * 0.10);
         // 0.30000000000000004 puede parecer insignificante,
         // pero al irse acumulando puede generar problemas graves
         BigDecimal bdString = new BigDecimal("0.1");
-        System.out.println("Con BigDecimal 3 * 0.10 = "+ bdString.multiply(new BigDecimal(3)));
+        System.out.println("Con BigDecimal 3 * 0.10 = " + bdString.multiply(new BigDecimal(3)));
 
         BigDecimal bdDouble = new BigDecimal(0.1);
         BigDecimal otroBigDecimal = new BigDecimal("0.10");
-        System.out.println("Escala bdString:"+bdString.scale());
-        System.out.println("Escala otroBigDecimal:"+otroBigDecimal.scale());
-        System.out.println("¿Son iguales? "+bdString.equals(otroBigDecimal));
+        System.out.println("Escala bdString:" + bdString.scale());
+        System.out.println("Escala otroBigDecimal:" + otroBigDecimal.scale());
+        System.out.println("¿Son iguales? " + bdString.equals(otroBigDecimal));
         // Al crear el BigDecimal a partir de un Double se tiene el mismo problema de imprecision
-        System.out.println("Con bdDouble 3 * 0.10 = "+ bdDouble.multiply(new BigDecimal(3)));
-       // hay que convertir
+        System.out.println("Con bdDouble 3 * 0.10 = " + bdDouble.multiply(new BigDecimal(3)));
+        // hay que convertir
         double x = 0.10;
-        System.out.println("(Con conversion) 3 * 0.10 = "+ new BigDecimal(String.valueOf(x)).multiply(BigDecimal.valueOf(3)));
+        System.out.println("(Con conversion) 3 * 0.10 = " + new BigDecimal(String.valueOf(x)).multiply(BigDecimal.valueOf(3)));
         // BigDecimal es más lento y ocupa más memoria, pero es más preciso
+
+        // ***** Como evitar las NullPointerException *****
+        String miString = null;
+//        miString.toLowerCase();
+//        Exception in thread "main" java.lang.NullPointerException
+//        	at org.ejemplo.Main.main(Main.java:123)
+        // esto arroja excepcion tambien
+//        System.out.println(miString.equals("lunes"));
+//        Exception in thread "main" java.lang.NullPointerException
+//           at org.ejemplo.Main.main(Main.java:126)
+        // Si se invierte funciona
+        System.out.println("lunes".equals(miString));
+        //recorrer colecciones nulas
+        // también da NullPointerException deben estar
+        // vacías no nulas
+//        ArrayList<String> miLista = null;
+//        for (String s : miLista) {
+//            System.out.println(s);
+//        }
+//        Exception in thread "main" java.lang.NullPointerException
+//        at org.ejemplo.Main.main(Main.java:136)
 
     }
 }
