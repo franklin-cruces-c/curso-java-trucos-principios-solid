@@ -138,6 +138,36 @@ public class Main {
 //        }
 //        Exception in thread "main" java.lang.NullPointerException
 //        at org.ejemplo.Main.main(Main.java:136)
+        // ***** Rendimiento de los Strings *****
+        // Java tiene un pool de Strings para almacenar y evitar volver a crear otros iguales
 
+        String str1= "Hola";
+        String str2= "Hola";
+        System.out.println("Son iguales str1 y str2? " + (str1 == str2));
+        String str3= new String("Hola");
+        System.out.println("Son iguales str1 y str3? " + (str1 == str3));
+        // Con la directiva intern hace que utilice el pool de String de Java
+        String str4= new String("Hola").intern();
+        System.out.println("Son iguales str1 y str4? " + (str1 == str4));
+        //uso de String vs StringBuilder
+        String [] misStrings = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v"};
+        long antes = System.currentTimeMillis();
+        String resultado="";
+        for(String s:misStrings){
+           resultado +=s;
+        }
+        long ahora = System.currentTimeMillis();
+        System.out.println("String obtenido: "+resultado);
+        System.out.println("Tiempo transcurrido con String :"+(ahora-antes)+" milisegundos");
+
+        long antesSB = System.currentTimeMillis();
+        StringBuilder resultadoSB=new StringBuilder("");
+        for(String s:misStrings){
+            resultadoSB.append(s);
+        }
+        String resultadoSBString = resultadoSB.toString();
+        long ahoraSB = System.currentTimeMillis();
+        System.out.println("String obtenido: "+resultadoSBString);
+        System.out.println("Tiempo transcurrido con StringBuilder :"+(ahoraSB-antesSB)+" milisegundos");
     }
 }
