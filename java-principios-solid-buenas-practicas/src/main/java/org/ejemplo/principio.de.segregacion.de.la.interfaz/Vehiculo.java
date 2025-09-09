@@ -6,5 +6,5 @@ public interface Vehiculo {
     void cambiarMarcha();
     void acelerar();
     void frenar();
-    void llenarDeposito();
+//    void llenarDeposito();
 }

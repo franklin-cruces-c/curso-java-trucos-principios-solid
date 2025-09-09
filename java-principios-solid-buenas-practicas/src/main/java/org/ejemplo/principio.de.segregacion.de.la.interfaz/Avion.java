@@ -1,6 +1,6 @@
 package org.ejemplo.principio.de.segregacion.de.la.interfaz;
 
-public class Moto implements Vehiculo, Energia {
+public class Avion implements Vehiculo,Volador,Energia{
     @Override
     public void encenderMotor() {
 
@@ -26,13 +26,23 @@ public class Moto implements Vehiculo, Energia {
 
     }
 
-    @Override
-    public void recargar() {
-
-    }
-
 //    @Override
 //    public void llenarDeposito() {
 //
 //    }
+
+    @Override
+    public void despegar() {
+
+    }
+
+    @Override
+    public void aterreizar() {
+
+    }
+
+    @Override
+    public void recargar() {
+
+    }
 }
