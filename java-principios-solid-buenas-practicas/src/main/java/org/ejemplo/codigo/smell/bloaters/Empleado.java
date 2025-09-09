@@ -1,4 +1,4 @@
-package org.ejemplo.bloaters;
+package org.ejemplo.codigo.smell.bloaters;
 
 public final class Empleado {
     private final int id;
