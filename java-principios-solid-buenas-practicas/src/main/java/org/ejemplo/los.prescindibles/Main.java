@@ -8,7 +8,9 @@ public class Main {
 
        //// #####################################
 
-        Coleccion miColeccionOrdenada = Utils.ordenarColeccion(coleccion);
+   //     Coleccion miColeccionOrdenada = Utils.ordenarColeccion(coleccion);
+// se quitan referencias al metodo que no se volverá a utilizar
+        Coleccion miColeccionOrdenada = coleccion.ordenar();
     }
 }
 
