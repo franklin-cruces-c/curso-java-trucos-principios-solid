@@ -54,4 +54,8 @@ public class Direccion {
                 ", codigoPostal=" + codigoPostal +
                 '}';
     }
+
+    public String getRegion() {
+        return getRegion();
+    }
 }

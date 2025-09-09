@@ -24,9 +24,14 @@ public class Cliente {
     }
 
 
+
     public static Cliente obtenerClienteX() {
         Ciudad ciudad = new Ciudad("Quito", "Ecuador", "Pichincha");
         Direccion direccion = new Direccion("Bélgica", 8, ciudad, 170506);
         return new Cliente("Antonio", "García Fernández", direccion);
+    }
+
+    public String getRegion() {
+        return direccion.getRegion();
     }
 }
